@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
-import Image from 'next/image'
+import Signature from './Signature'
 
 // Define the type for a single scraped content item
 interface ScrapedContentItem {
@@ -52,7 +52,7 @@ export function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/80 text-foreground flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/80 text-foreground flex flex-col items-center justify-center p-4 relative font-geist-sans">
       <Button
         variant="outline"
         className="absolute top-4 right-4 hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -208,11 +208,7 @@ export function LandingPage() {
         </CardContent>
       </Card>
 
-      <div className="mt-8 flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-        <span>A PRODUCT BY</span>
-        <Image src="/placeholder.svg" alt="Company Logo" width={24} height={24} />
-        <span className="font-semibold">Company Name</span>
-      </div>
+      <Signature />
 
       {showResults && (
         <div className="mt-8 w-full max-w-2xl">
